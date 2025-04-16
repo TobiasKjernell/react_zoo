@@ -1,0 +1,63 @@
+.left,
+.right {
+    padding: 2rem;
+}
+
+.left {
+    flex: 0 0 30%;
+}
+.right {
+    align-self: start;
+    flex: 1
+}
+.image {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+}
+
+.button {
+    border: 1px solid var(--gold);
+    background-image: url('../../assets/greenbackground.jpg');
+    padding: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+
+        color: var(--gold);
+    }
+}
+
+.description {
+    color: #fff;
+    margin: 10px 0;
+}
+
+.name {
+    color: var(--gold);
+    font-size: 46px;
+}
+
+.infoHighlight {
+    color: var(--gold)
+}
+
+.infoBox {
+    background-image: url('../../assets/greenbackground.jpg');
+    max-width: 90%;
+    max-height: 90%;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (max-width:1200px) {
+    .infoBox {
+        min-height: 100%;
+        min-width: 100%;
+        border:none;
+        flex-direction: column;
+    }
+}

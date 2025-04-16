@@ -1,0 +1,32 @@
+.button, a:link.button , a:visited.button , a:active.button, .active  {
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    border-bottom: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        background-color: var(--gold);
+        color: var(--green)
+    }
+}
+
+.button:first-child, a:link.button:first-child , a:visited.button:first-child , a:active.button:first-child, a.active:first-child {
+    border-top: 2px dotted var(--gold);
+}
+
+.active {
+    background-color: var(--gold);
+    color: var(--green);
+}
+
+
+
+
+
+
+

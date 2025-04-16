@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-image: url('../../assets/greenbackground.jpg');
+}
+
+.logo {
+    width: 5rem;
+    height: 100%;
+    margin-left: 2rem;
+}
+
+.parkName {
+    color: var(--gold);
+    background-color: var(--green);
+    padding: 0.5rem 1rem;
+    margin-right: 2rem;
+
+    border-end-end-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 1px solid var(--gold);
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .parkName {
+        font-size: 24px;
+    }
+}

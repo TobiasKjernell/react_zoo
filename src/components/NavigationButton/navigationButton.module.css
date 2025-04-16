@@ -1,0 +1,18 @@
+a:link.navItem, a:visited.navItem, a:active.navItem, .active {
+   text-decoration: none;
+   color: var(--gold);
+   text-transform: capitalize;
+   font-size: 20px;
+
+    &:hover{
+        border-bottom: 1px solid var(--gold);
+    }
+}
+
+.active {
+        border-bottom: 1px solid var(--gold);
+}
+
+.navItem {
+    text-decoration: none;
+}
