@@ -124,9 +124,9 @@ const getIntroductionInfo = (page) => {
 
 const navigationData = ['home', 'birds', 'mammals', 'reptiles']
 const allAnimals = [...reptiles, ...mammals, ...birds];
-const animalRoutes = [...new Set(allAnimals.map(item => item.group))]
+const groupRoutes = [...new Set(allAnimals.map(item => item.group))]
 const getAnimalByName = name => allAnimals.filter(item => item.name === name).at(0);
 const getAnimalsByCategory = group => allAnimals.filter(animal => animal.group === group)
 
-export { allAnimals, navigationData, getAnimalByName, animalRoutes, getAnimalsByCategory, getIntroductionInfo };
+export { allAnimals, navigationData, getAnimalByName, groupRoutes, getAnimalsByCategory, getIntroductionInfo };
 

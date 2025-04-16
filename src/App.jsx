@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 import Layout from './pages/Layout'
 import DynamicPage from './pages/DynamicPage'
-import { animalRoutes, getAnimalsByCategory } from './data/data'
+import { groupRoutes, getAnimalsByCategory } from './data/data'
 import { useState } from 'react';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route element={<Layout currentAnimal={currentAnimal} handleSetReviewAnimal={handleSetReviewAnimal} reviewAnimal={reviewAnimal}  handleSetAnimal={handleSetAnimal} />} >
           <Route element={<DynamicPage preview={true} currentAnimal={currentAnimal} handleSetReviewAnimal={handleSetReviewAnimal} reviewAnimal={reviewAnimal} handleSetAnimal={handleSetAnimal}  />} path='/' />
-          {animalRoutes.map((animalType, index) =>
+          {groupRoutes.map((animalType, index) =>
             <Route element={<DynamicPage key={index} animalGroup={animalType} preview={false} path={true} currentAnimal={currentAnimal} handleSetReviewAnimal={handleSetReviewAnimal} reviewAnimal={reviewAnimal} handleSetAnimal={handleSetAnimal}  />} path={animalType}>
               {getAnimalsByCategory(animalType).map((animal, indexChild) =>
                 <Route key={indexChild} element={<DynamicPage key={index} animals={animal} currentAnimal={currentAnimal} handleSetReviewAnimal={handleSetReviewAnimal} reviewAnimal={reviewAnimal} handleSetAnimal={handleSetAnimal} />} path={animal.name.replaceAll(" ", "").toLowerCase()} />)}

@@ -1,0 +1,102 @@
+1.Get most of the images from old zoo repo. Animals pictures and textures images.
+2. download assignment textfile from omniway and make data.js file.
+
+folder structure:
+src
+-assets
+-components
+--mobileComponents
+-pages
+-utils
+
+app.jsx
+    -Routes
+        <R>-Layout
+            <R>Home
+            <R>main-group route (map)
+                <R>group-animal route (map by category/group)
+        </R>   
+
+
+Layout.jsx will hold:
+    Header
+    Outlet
+    Footer
+
+
+Components--
+Header: 
+   design > Icon Nav/mobile Park-name
+
+    Icon, just find something 'Australia'
+    
+    Navigation:
+        Navigation will import data about the groups and (map) a
+        new component. This component consist of <NavLink> so it can point to chosen route.
+    
+    Park-name is going to be a CSS design.
+
+  MainInformationBox -- right, flex: 1
+
+MainInformationBox
+            -will check if we have a 'current animal' in state.
+             this state will render a components with different info.
+            -if we do, render animal introduction. (this one also have a 'preview' prop coming directly from router. Different type information renders.)
+            -if not -> show welcome message.
+    
+PopUp
+        I want this to be a 50-70% background opacity over whole site.
+        If i have this one inside this page, it can clean up alot byitself. In the middle i want to try something like a "center" view which can be quite small so i force a scrollbar. Want to practice more with scrollbars. Also i want it to contain information within a grid. Close button and a header containing animal name.
+
+        will take a state-prop from dynamicpage for activating popup.
+
+        design idea: ----name----X
+                     ----pic--info
+                    descirption---
+    
+ Sidebar
+        Container wrapping with flex(column).
+        Will be depended on catergory aninamls for (map).
+        It will generate a button component. Re-suseable button
+        component for mobile aswell.
+
+        Sidebatton:
+        need animal state and a path prop. 
+        Going to use a button if Home and NavLink if specific category animal for routing. Want to test to use both. 
+
+CallbackButton
+    button that just takes a callback and a custom style class.
+    Resuable when needed.
+
+Footer
+    -Name/year > center.
+
+MobileSidebar
+    Take icons from a npm-package, have it on top left and reuse sidebutton-component. CSS fixes for mobile. Hidden if above @media query reqs.  onClick will have a togglestate
+
+MobileNav
+    Icons from a npm-package, use in header right corner. Hidden if above @media query reqs. onClick will have a togglestate
+       
+
+Pages will have a DynamicPage i'll reuse. DynamicPage.jsx
+    state: currentAnimal, reviewAnimal, category/group of the current selection.
+    UseEffect for group/category
+
+    flex: 1
+    PopUp -- hidden
+    Sidebar -- left, flex: 0 0 10-20% (test)
+   
+
+POST RESULT: 
+
+    Totally missed that PopUp will cover everything except Header. I had to move popup into layout and wrap it together with Outlet and Footer.
+
+    Since i had to move PopUp away from DynamicPage into Layout, i had to put some states up one level and make alot of props into router. This made it very messy. It is what it is.
+
+    There was in some usecases where i wanted to use reducers and dispatchers instead of state, but kept the code around the assignment rules.
+
+    I didnt go with dynamic :ids routing.
+
+    I added some additional components just to clean up some html puzzle. 
+
+
