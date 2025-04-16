@@ -24,6 +24,12 @@
     color: var(--green);
 }
 
+@media screen and (max-width: 900px) {
+    .button:first-child, a:link.button:first-child , a:visited.button:first-child , a:active.button:first-child, a.active:first-child {
+        border-top: none;
+    }
+}
+
 
 
 

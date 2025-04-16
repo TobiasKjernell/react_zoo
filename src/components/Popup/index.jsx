@@ -1,8 +1,25 @@
+import { useEffect } from 'react';
 import { getImageUrl, pictureNameCleanup } from '../../utils/utilities';
 import CallbackButton from '../CallbackButton';
 import styles from './popup.module.css'
 
 const Popup = ({ currentAnimal, onReviewAnimal }) => {
+
+    useEffect(() => {
+
+        const closeEscape = (e) => {
+            if (e.code === 'Escape') onReviewAnimal(null);
+        }
+
+        document.addEventListener('keydown', closeEscape);
+
+        return function () {
+            document.removeEventListener('keydown', closeEscape);
+        }
+        
+    }, [onReviewAnimal])
+
+
     return (
         <div className={styles.container}>
             <div className={styles.infoBox}>

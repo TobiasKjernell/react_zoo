@@ -4,7 +4,7 @@ import Sidebar from '../../components/Sidebar';
 import styles from './dynamicPage.module.css'
 import Popup from '../../components/Popup';
 import { allAnimals, getAnimalsByCategory } from '../../data/data';
-import MobileNavigation from '../../components/MobileComponents/MobileNavigation';
+import MobileSidebar from '../../components/MobileComponents/MobileSidebar';
 
 const Home = ({ preview = false, path = false, animalGroup }) => {
 
@@ -23,6 +23,7 @@ const Home = ({ preview = false, path = false, animalGroup }) => {
             {reviewAnimal && <Popup currentAnimal={currentAnimal} onReviewAnimal={handleSetReviewAnimal} />}
             <div className={styles.container}>
                 <Sidebar animals={categoryAnimals} onSetAnimal={handleSetAnimal} path={path} currentAnimal={currentAnimal} />
+                <MobileSidebar animals={categoryAnimals} onSetAnimal={handleSetAnimal} path={path} currentAnimal={currentAnimal} />
                 <MainBox currentAnimal={currentAnimal} onReviewAnimal={handleSetReviewAnimal} preview={preview} group={animalGroup} />
             </div>
         </>

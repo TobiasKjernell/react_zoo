@@ -1,0 +1,26 @@
+.container {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+        .container {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+        
+        .itemContainer {
+            display: flex;
+            flex-direction: column;
+            position:absolute;
+            top: 100%;
+            left: 0;
+            background-image: url('../../../assets/greenbackground.jpg'); 
+            border: 1px solid var(--gold);
+            height: auto;
+            width: 300px;
+            z-index: 1;
+        }
+}
