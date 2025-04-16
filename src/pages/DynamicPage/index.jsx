@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import MainBox from '../../components/MainBox';
 import Sidebar from '../../components/Sidebar';
 import styles from './dynamicPage.module.css'
-import Popup from '../../components/Popup';
 import { allAnimals, getAnimalsByCategory } from '../../data/data';
 import MobileSidebar from '../../components/MobileComponents/MobileSidebar';
 
