@@ -6,13 +6,13 @@ import Popup from '../../components/Popup';
 import { allAnimals, getAnimalsByCategory } from '../../data/data';
 import MobileSidebar from '../../components/MobileComponents/MobileSidebar';
 
-const Home = ({ preview = false, path = false, animalGroup }) => {
+const Home = ({ preview = false, path = false, animalGroup, handleSetAnimal, currentAnimal, handleSetReviewAnimal, reviewAnimal }) => {
 
-    const [currentAnimal, setCurrentAnimal] = useState(null);
-    const [reviewAnimal, setReviewAnimal] = useState(false);
     const [categoryAnimals, setCategoryAnimals] = useState(null)
-    const handleSetReviewAnimal = () => setReviewAnimal(!reviewAnimal);
-    const handleSetAnimal = (animal) => setCurrentAnimal(animal !== currentAnimal ? animal : null);
+    useEffect(() => {
+       reviewAnimal && handleSetReviewAnimal()
+       currentAnimal && handleSetAnimal(null);
+    }, [])
 
     useEffect(() => {
         preview ? setCategoryAnimals(allAnimals) : setCategoryAnimals(getAnimalsByCategory(animalGroup))
@@ -20,7 +20,6 @@ const Home = ({ preview = false, path = false, animalGroup }) => {
 
     return (
         <>
-            {reviewAnimal && <Popup currentAnimal={currentAnimal} onReviewAnimal={handleSetReviewAnimal} />}
             <div className={styles.container}>
                 <Sidebar animals={categoryAnimals} onSetAnimal={handleSetAnimal} path={path} currentAnimal={currentAnimal} />
                 <MobileSidebar animals={categoryAnimals} onSetAnimal={handleSetAnimal} path={path} currentAnimal={currentAnimal} />
