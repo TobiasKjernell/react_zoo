@@ -5,9 +5,10 @@ import styles from './dynamicPage.module.css'
 import { allAnimals, getAnimalsByCategory } from '../../data/data';
 import MobileSidebar from '../../components/MobileComponents/MobileSidebar';
 
-const Home = ({ preview = false, path = false, animalGroup, handleSetAnimal, currentAnimal, handleSetReviewAnimal, reviewAnimal }) => {
+const DynamicPage = ({ preview = false, path = false, animalGroup, handleSetAnimal, currentAnimal, handleSetReviewAnimal, reviewAnimal }) => {
 
     const [categoryAnimals, setCategoryAnimals] = useState(null)
+
     useEffect(() => {
        reviewAnimal && handleSetReviewAnimal()
        currentAnimal && handleSetAnimal(null);
@@ -28,4 +29,4 @@ const Home = ({ preview = false, path = false, animalGroup, handleSetAnimal, cur
     )
 }
 
-export default Home;
+export default DynamicPage;

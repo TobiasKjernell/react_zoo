@@ -1,8 +1,6 @@
-
 import { getImageUrl } from '../../utils/utilities';
 import MobileNavigation from '../MobileComponents/MobileNavigation';
 import Navigation from '../Navigation';
-import Popup from '../Popup';
 import styles from './header.module.css'
 
 const Header = ({reviewAnimal, handleSetReviewAnimal }) => {
